@@ -1,17 +1,16 @@
 #finds algorithm
 import csv
+hypo = ['%','%','%','%','%','%']
 with open('p1.csv') as csv_file:
     read_csv = csv.reader(csv_file,delimiter=',')
     data = []
     loa = 0
-    print("\nThe given training example:\n")
     for row in read_csv:
         if row[len(row)-1].upper()=="YES":
             loa += len(row)-1
             data.append(row)
-
-    for i in data:        
-        print(i)
-    
-    print("The total no. of training sets: ",len(data))
-    print("The total length of attributes: ",loa)
+    print "The total no. of training sets: ", len(data)
+    print "The total length of attributes: ", loa
+    print "The valid training sets of the given example are:\n"
+    for i in data:
+        print i
