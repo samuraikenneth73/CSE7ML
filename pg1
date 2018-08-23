@@ -1,0 +1,14 @@
+#finds algorithm
+import csv
+with open('file.csv') as csv_file:
+    read_csv = csv.reader(csv_file,delimiter=',')
+    data = []
+    loa = 0
+    tval = 0
+    print("\nThe given training example:\n")
+    for row in read_csv:
+        if row[len(row)-1].upper()=="YES":
+            
+            data.append(row)
+    for i in data:        
+        print(i)
