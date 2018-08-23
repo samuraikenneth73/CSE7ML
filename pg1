@@ -1,6 +1,6 @@
 #finds algorithm
 import csv
-with open('file.csv') as csv_file:
+with open('p1.csv') as csv_file:
     read_csv = csv.reader(csv_file,delimiter=',')
     data = []
     loa = 0
