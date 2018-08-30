@@ -1,5 +1,5 @@
 import csv
-#hypo = ['%','%','%','%','%','%']
+hypo = ['%','%','%','%','%','%']
 with open('p1.csv') as csv_file:
     read_csv = csv.reader(csv_file,delimiter=',')
     data = []
@@ -12,7 +12,29 @@ with open('p1.csv') as csv_file:
     print "The total number of positive training sets: ", var
     print "The total length of attributes: ", loa
     print "The valid training sets of the given example are:\n"
-
-    
-    for i in range(var):
-        print data[0][i]
+TotExamples = len(data)
+i=0
+j=0
+k=0
+print('Steps of Find-s Algorithm :\n')
+list = [] 
+p=0
+d = len(data[p])-1;
+for j in range(d):
+    list.append(data[i][j])
+hypo = list
+i=1
+for i in range(TotExamples):
+    for k in range(d):
+        if hypo[k] != data[i][k]:
+            hypo[k] = '?'
+            k += 1
+        else:
+            hypo[k]
+        print(hypo)
+i += 1
+print('\n Max Specific Find-S hypothesis for given csv are :')
+list = []
+for i in range(d):
+    list.append(hypo[i])
+print(list)
