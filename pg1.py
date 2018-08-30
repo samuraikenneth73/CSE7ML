@@ -11,7 +11,6 @@ with open('p1.csv') as csv_file:
     var = len(data[0])-1
     print "The total number of positive training sets: ", var
     print "The total length of attributes: ", loa
-    print "The valid training sets of the given example are:\n"
 TotExamples = len(data)
 i=0
 j=0
