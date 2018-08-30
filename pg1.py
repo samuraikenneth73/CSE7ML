@@ -1,36 +1,33 @@
 import csv
 hypo = ['%','%','%','%','%','%']
-with open('p1.csv') as csv_file:
-    read_csv = csv.reader(csv_file,delimiter=',')
+with open ('p1.csv') as csv_file:
+    reader = csv.reader(csv_file)
     data = []
-    loa = 0
-    for row in read_csv:
-        if row[len(row)-1].upper()=="YES":
+    for row in reader:
+        if row[len(row)-1].upper() == "YES":
             data.append(row)
-    var = len(data[0])-1
-TotExamples = len(data)
-i=0
-j=0
-k=0
-print('Steps of Find-s Algorithm :')
+print('The Training Examples are :\n')
+for x in data:
+    print(x)
+print('\n')
+i=j=k=p=0
+print('Steps of find-S Algorithm :\n')
 list = [] 
-p=0
-d = len(data[p])-1;
-for j in range(d):
+for j in range(len(data[p])):
     list.append(data[i][j])
 hypo = list
 i=1
-for i in range(TotExamples):
-    for k in range(d):
-        if hypo[k] != data[i][k]:
-            hypo[k] = '?'
-            k += 1
-        else:
-            hypo[k]
-        #print(hypo)#dataset
+for i in range(len(data)):
+	for k in range(len(data[p])):
+		if hypo[k] != data[i][k]:
+			hypo[k] = '?'
+			k += 1
+		else:
+			hypo[k]
+	print(hypo)
 i += 1
-print('Max Specific Find-S hypothesis for given csv are:')
+print('\nMax Specific Find-S hypothesis for given csv are :\n')
 list = []
-for i in range(d):
+for i in range(len(data[p])):
     list.append(hypo[i])
 print(list)
