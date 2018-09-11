@@ -116,4 +116,16 @@ def execution_decision_tree():
 				nodeVal = next(iter(tempDict))
 				child = tempDict[next(iter(tempDict))].keys()
 				tempDict = tempDict[next(iter(tempDict))]
-				
+				index = a.index(nodeVal)
+				value = entry[index]
+				if value in tempDict.key():
+					result = tempDict[value]
+					tempDict = tempDict[value]
+				else:
+					result = 'Null'
+					break
+				if result != 'Null':
+					results.append(result==entry[-1])
+				print(result)
+if __name__ == '__main__':
+	execute_decision_tree()					
