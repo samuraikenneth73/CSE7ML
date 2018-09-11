@@ -1,4 +1,4 @@
-  import csv
+import csv
 import math
 import random
 def majorClass(a,d,t):
@@ -90,5 +90,30 @@ def build_tree(d,a,t):
 	for val in get_values(d,a,b):
 		new_data = get_data(d,a,b,v)
 		nA = a[:]
-		
-		
+		nA.remove(b)
+		subtree = build_tree(new_data,newAttr,t)
+		tree[best][val] = subtree
+	return  tree
+def execution_decision_tree():
+	d = []
+	with open('p3.csv') as tsv:
+		for line in csv.reader(tsv):
+			d.append(tuple(line))
+		print('Number of records: ',len(d))
+		at = ['outlook','temperature','humidity','wind','play']
+		t = a[-1]
+		acc = []
+		training_set = [ x for i,x in enumarate(d)]
+		tree = build_tree(training_set,at,t)
+		print(tree)
+		results = []
+		test_set = [('rainy','mild','high','strong')]
+		for entry in test_set:
+			tempDict = tree.copy()
+			result = ''
+			while(isinstance(tempDict,dict)):
+				child = []
+				nodeVal = next(iter(tempDict))
+				child = tempDict[next(iter(tempDict))].keys()
+				tempDict = tempDict[next(iter(tempDict))]
+				
